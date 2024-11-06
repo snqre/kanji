@@ -1,7 +1,8 @@
-export type ArithmeticSubType = typeof ARITHMETIC_SUB_TYPE[number];
+export type ArithmeticSubType = "uint" | "int";
 
-export const ARITHMETIC_SUB_TYPE = 
-    [
+export function arithmeticSubType(): ReadonlyArray<string> {
+    return ([
         "uint",
         "int"
-    ] as const;
+    ]);
+}

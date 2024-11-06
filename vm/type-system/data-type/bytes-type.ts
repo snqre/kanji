@@ -1,13 +1,12 @@
 import type {BytesBitSize} from ".";
 import type {BytesSubType} from ".";
-import {BYTES_BIT_SIZE} from ".";
-import {BYTES_SUB_TYPE} from ".";
+import {bytesBitSize} from ".";
+import {bytesSubType} from ".";
 
 export type BytesType = `${BytesSubType}${BytesBitSize}`;
 
-export const BYTES_TYPE: ReadonlyArray<string> = 
-    (() => {
-        const union: Array<string> = [];
-        BYTES_SUB_TYPE.forEach(baseType => BYTES_BIT_SIZE.forEach(bitSize => union.push(`${baseType}${bitSize}`)));
-        return (union);
-    })();
+export function bytesType(): ReadonlyArray<string> {
+    const union: Array<string> = [... bytesSubType()];
+    bytesSubType().forEach(baseType => bytesBitSize().forEach(bitSize => union.push(`${baseType}${bitSize}`)));
+    return (union);
+}

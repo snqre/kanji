@@ -1,8 +1,5 @@
-export type BaseType = typeof BASE_TYPE[number];
+export type BaseType = "address" | "string" | "bool";
 
-export const BASE_TYPE = 
-    [
-        "address",
-        "string",
-        "bool"
-    ] as const;
+export function baseType(): ReadonlyArray<BaseType> {
+    return (["address", "string", "bool"]);
+}

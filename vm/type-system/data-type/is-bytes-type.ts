@@ -1,7 +1,7 @@
 import type {BytesType} from ".";
-import {BYTES_TYPE} from ".";
+import {bytesType} from ".";
 
 export function isBytesType(item: unknown): item is BytesType {
     if (typeof item !== "string") return false;
-    return BYTES_TYPE.includes((item));
+    return bytesType().includes((item));
 }

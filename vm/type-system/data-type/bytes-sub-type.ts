@@ -1,6 +1,5 @@
-export type BytesSubType = typeof BYTES_SUB_TYPE[number];
+export type BytesSubType = "bytes";
 
-export const BYTES_SUB_TYPE = 
-    [
-        "bytes"
-    ] as const;
+export function bytesSubType(): ReadonlyArray<string> {
+    return (["bytes"]);
+}

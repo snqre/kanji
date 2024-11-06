@@ -1,4 +1,23 @@
-/// @todo
+import type {AnyType} from "./";
+import {ANY_TYPE} from "./";
+
+export function isAnyType(item: unknown): item is AnyType {
+    if (typeof item !== "string") return false;
+    item = 
+        item
+            .split(",")
+            .map(_process)
+            .join(",");
+    const parsed: Array<string> = JSON.parse(`[${item}]`);
+    let i: bigint = 0n;
+    while (i < parsed.length) {
+        const tkn: string = parsed[Number(i)];
+        if (!Array.isArray(tkn) && !ANY_TYPE.includes(tkn)) return false;
+        
+    }
+
+    console.log(parsed);
+}
 
 export function validate(item: string | DataType.Any.Type[] | Array<unknown>): item is Type {
     if (typeof item === "string") {
@@ -34,4 +53,6 @@ function _wrapInQuote(item: string): string {
     return (`"${item}"`);
 }
 
-validate("[uint256,[string]]");
+const result = isAnyType("[uint256]");
+
+console.log(result);
