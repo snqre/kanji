@@ -1,7 +1,12 @@
 import type {BaseType} from ".";
-import {baseType} from ".";
+
+const _isBaseType: {[key: string]: true | undefined} = {
+    address: true,
+    string: true,
+    bool: true
+};
 
 export function isBaseType(item: unknown): item is BaseType {
     if (typeof item !== "string") return false;
-    return baseType().includes((item as any));
+    return (_isBaseType[item] === true);
 }

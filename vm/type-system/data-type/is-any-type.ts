@@ -1,5 +1,5 @@
 import type {AnyType} from "./";
-import {ANY_TYPE} from "./";
+import {anyType} from "./";
 
 export function isAnyType(item: unknown): item is AnyType {
     if (typeof item !== "string") return false;
@@ -12,7 +12,7 @@ export function isAnyType(item: unknown): item is AnyType {
     let i: bigint = 0n;
     while (i < parsed.length) {
         const tkn: string = parsed[Number(i)];
-        if (!Array.isArray(tkn) && !ANY_TYPE.includes(tkn)) return false;
+        if (!Array.isArray(tkn) && !anyType().includes(tkn)) return false;
         
     }
 

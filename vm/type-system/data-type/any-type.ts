@@ -17,9 +17,13 @@ export type AnyType =
 /// but not in the runtime array.
 
 export function anyType(): ReadonlyArray<string> {
+    const arrayType_ = arrayType();
+    console.log(arrayType_);
     return ([
-        ... arithmeticType(),
-        ... arrayType(),
-        ... baseType()
+        //... arithmeticType(),
+        //... arrayType(),
+        //... baseType()
     ]);
 }
+
+console.log(anyType());
