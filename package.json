@@ -1,0 +1,15 @@
+{
+  "name": "kanji",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "ethers": "^6.13.4",
+    "kyudo": "https://github.com/snqre/kyudo.git#main"
+  }
+}
