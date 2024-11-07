@@ -1,5 +1,5 @@
-import type {AnyType} from "./";
-import {anyType} from "./";
+import type {AnyType} from ".";
+import {anyType} from ".";
 
 export function isAnyType(item: unknown): item is AnyType {
     if (typeof item !== "string") return false;
